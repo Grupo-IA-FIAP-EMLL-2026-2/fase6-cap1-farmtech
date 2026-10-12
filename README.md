@@ -82,3 +82,16 @@ O conjunto de dados está preparado para o treinamento do modelo YOLO. As etapas
 Contribuições
 
 Larissa da Silva Marcelino: coleta e preparação das imagens, anotação manual no MakeSense.ai, validação das classes, organização do dataset YOLO e documentação dessa etapa.
+
+
+Entrega 2: CNN treinada do zero
+
+Uma CNN simples foi treinada do zero para classificar a imagem inteira como "banana" ou "garrafa_pet", usando a mesma divisão treino/validação/teste do dataset YOLO (32/4/4 por classe).
+
+Notebook: [MatheusFontes_rm570457_pbl_fase6.ipynb](MatheusFontes_rm570457_pbl_fase6.ipynb) (código, saídas, métricas e análise crítica). Roda no Colab ou localmente; a seção 1.1 converte o dataset YOLO em pastas por classe, sem alterar o Drive.
+
+Vídeo demonstrativo: (link do YouTube "não listado" a ser adicionado)
+
+Contribuições (Entrega 2, CNN)
+
+Matheus Fontes: implementação, treinamento e avaliação da CNN, e documentação dessa etapa.
