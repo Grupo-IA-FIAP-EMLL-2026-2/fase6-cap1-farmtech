@@ -21,9 +21,9 @@
 
 ## 👩‍🏫 Professores
 
-### Tutor(a)
+### Tutora
 
-Identificação a confirmar pelo grupo no portal da turma.
+Nicolly Candida.
 
 ### Coordenador(a)
 
@@ -81,7 +81,7 @@ Fotos originais, marcações e pesos da YOLO permanecem no Drive. A contribuiç�
 
 ### 📢 Observações Gerais
 
-A entrega ainda precisa reunir a YOLO padrão, a comparação crítica das três abordagens e o vídeo, além de concluir a integração dos notebooks no repositório do grupo. O tutor deve ser identificado após confirmação no portal.
+A entrega ainda precisa reunir a YOLO padrão, a comparação crítica das três abordagens e o vídeo, além de concluir a integração dos notebooks no repositório do grupo.
 
 **Prazo informado pelo grupo: 13/10/2026.** Antes da submissão, revisar execução, nomes dos arquivos, acessos e conteúdo dos links. Após a entrega no portal, manter a versão entregue congelada, conforme a orientação do enunciado.
 

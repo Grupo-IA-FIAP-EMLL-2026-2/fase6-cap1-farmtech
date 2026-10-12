@@ -49,7 +49,7 @@ A síntese da CNN deve deixar claro que ela assume uma classe alvo por foto, pod
 | Integrantes e RMs | Os quatro nomes e RMs foram confirmados pelo grupo e registrados no README |
 | Nome dos notebooks | Lucas e Matheus usam nome, RM e `pbl_fase6.ipynb`; verificar a identificação dos próximos arquivos |
 | Template FIAP | README adaptado às seções do modelo da Fase 6, com logo, integrantes, professores, descrição, estrutura real, links, decisões, execução e atribuição |
-| Identificação do tutor | Nome ainda não informado; confirmar no portal e completar |
+| Identificação da tutora | Nicolly Candida, informada pelo grupo e registrada no README |
 | Notebook final e links | Reunir as contribuições no repositório do grupo; confirmar acesso a cada notebook e aos dados |
 | Vídeo | Ainda não publicado; gravar após a comparação completa, até cinco minutos, YouTube não listado, com link direto no README |
 | Prazo | Informado pelo grupo como 13/10/2026; registrar a submissão e congelar a versão entregue |
