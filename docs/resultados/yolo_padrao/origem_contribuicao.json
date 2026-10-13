@@ -1,0 +1,49 @@
+{
+  "autor": "Elton Modesto de Souza Dias",
+  "rm": "572530",
+  "notebook_original": "https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase5-cap1-farmtech/blob/6efd71a421b35a11f841f6ea81b9cea892c8a89b/EltonDias_rm572530_pbl_fase6.ipynb",
+  "sha256_notebook_original": "66e07998385c215eaf633a954b838502a2e057e0d0ab93da2a19d0a4c18acb78",
+  "resultado_original": {
+    "modelo": "YOLOv5s padrão pré-treinada no COCO",
+    "regra_avaliacao": "acerto por imagem; bottle do COCO aproxima garrafa_pet",
+    "imagens_teste": 8,
+    "acertos": 5,
+    "acuracia_por_imagem": 0.625,
+    "tempo_medio_inferencia_ms": 937.4050050000164,
+    "limite_confianca": 0.25,
+    "pesos": "yolov5s COCO"
+  },
+  "revisao": "Integração autorizada por Lucas: documentação, comparação comum, reprodução da inferência e visualizações. O arquivo original da Fase 5 permanece preservado.",
+  "reproducao_executada": true,
+  "resultado_reproducao": {
+    "modelo": "YOLOv5s padrão pré-treinada no COCO",
+    "regra_avaliacao": "maior confiança >= 0.25 entre banana e bottle; sem detecção é erro",
+    "imagens_teste": 8,
+    "acertos": 5,
+    "acuracia_por_imagem": 0.625,
+    "erro_por_imagem": 0.375,
+    "tempo_medio_inferencia_ms": 229.9407353712013,
+    "escopo_tempo": "AutoShape sobre o caminho da foto: leitura/preparação, modelo e NMS; fora da medição: carregar pesos, aquecimento, conversão em tabela, render e salvar.",
+    "limite_confianca": 0.25,
+    "iou_nms": 0.6,
+    "treinamento_nesta_base": false,
+    "pesos": "yolov5s COCO",
+    "ambiente": {
+      "python": "3.12.3",
+      "pytorch": "2.14.1+cpu",
+      "torchvision": "0.29.1+cpu",
+      "ultralytics": "8.4.176",
+      "sistema": "Linux",
+      "dispositivo": "cpu",
+      "hardware": "x86_64",
+      "cpu": "Intel(R) Core(TM) 7 150U",
+      "threads_cpu": 4,
+      "yolo_commit": "f9578796b8a64889aa9e66dc06914d19f40d338e",
+      "batch_size": 1,
+      "imgsz": 640,
+      "precisao_numerica": "FP32"
+    }
+  },
+  "sha256_pesos_coco": "8b3b748c1e592ddd8868022e8732fde20025197328490623cc16c6f24d0782ee",
+  "limite_temporal": "Tempos originais e da reprodução medidos em ambientes diferentes; não foram substituídos nem misturados."
+}

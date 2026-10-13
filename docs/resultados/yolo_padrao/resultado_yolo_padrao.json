@@ -1,0 +1,29 @@
+{
+  "modelo": "YOLOv5s padrão pré-treinada no COCO",
+  "regra_avaliacao": "maior confiança >= 0.25 entre banana e bottle; sem detecção é erro",
+  "imagens_teste": 8,
+  "acertos": 5,
+  "acuracia_por_imagem": 0.625,
+  "erro_por_imagem": 0.375,
+  "tempo_medio_inferencia_ms": 229.9407353712013,
+  "escopo_tempo": "AutoShape sobre o caminho da foto: leitura/preparação, modelo e NMS; fora da medição: carregar pesos, aquecimento, conversão em tabela, render e salvar.",
+  "limite_confianca": 0.25,
+  "iou_nms": 0.6,
+  "treinamento_nesta_base": false,
+  "pesos": "yolov5s COCO",
+  "ambiente": {
+    "python": "3.12.3",
+    "pytorch": "2.14.1+cpu",
+    "torchvision": "0.29.1+cpu",
+    "ultralytics": "8.4.176",
+    "sistema": "Linux",
+    "dispositivo": "cpu",
+    "hardware": "x86_64",
+    "cpu": "Intel(R) Core(TM) 7 150U",
+    "threads_cpu": 4,
+    "yolo_commit": "f9578796b8a64889aa9e66dc06914d19f40d338e",
+    "batch_size": 1,
+    "imgsz": 640,
+    "precisao_numerica": "FP32"
+  }
+}

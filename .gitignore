@@ -3,3 +3,23 @@ dataset_yolo-*/
 fotos_originais-*/
 .venv/
 cnn_dataset/
+
+# Base, pesos e arquivos locais não fazem parte da publicação
+.env
+.env.*
+.aws/
+.codex/
+.agents/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.pt
+*.pth
+*.h5
+*.keras
+*.onnx
+*.zip
+dataset_yolo/
+fotos_originais/
+cnn_dataset/
+runs/

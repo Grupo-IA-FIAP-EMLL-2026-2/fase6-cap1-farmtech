@@ -41,22 +41,33 @@ O passo a passo, o código executado, os resultados e as conclusões estão nos 
 
 ```text
 fase6-cap1-farmtech/
-├── assets/
-│   └── logo-fiap.png
+├── assets/logo-fiap.png
+├── data/
+│   ├── dataset.yaml
+│   └── manifesto.csv
 ├── docs/
 │   ├── BASE_DE_DADOS.md
-│   └── REVISAO_ENTREGA.md
+│   ├── RESULTADOS_FRENTE1.md
+│   ├── REVISAO_ENTREGA.md
+│   ├── figuras/
+│   └── resultados/
+├── notebooks/
+│   └── LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb
+├── EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb
 ├── MatheusFontes_rm570457_pbl_fase6.ipynb
 ├── .gitignore
 └── README.md
 ```
 
 - **`assets/`**: imagem institucional utilizada neste README.
-- **`docs/`**: descrição da base e revisão dos requisitos da entrega.
+- **`data/`**: configuração e manifesto da base, sem fotos originais.
+- **`docs/`**: documentação, resultados e imagens processadas.
+- **`notebooks/`**: implementação executada da YOLO customizada.
+- **`EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb`**: YOLO padrão e comparação das três abordagens.
 - **`MatheusFontes_rm570457_pbl_fase6.ipynb`**: implementação e avaliação executadas da CNN.
 - **`README.md`**: apresentação, identificação da equipe e links de acesso.
 
-Fotos originais, marcações e pesos da YOLO permanecem no Drive. A contribuição da YOLO customizada está publicada no repositório de Lucas, com acesso direto abaixo; sua incorporação a este repositório ainda faz parte da integração.
+Fotos originais, marcações e pesos da YOLO permanecem no Drive. Os três notebooks, as evidências selecionadas e a comparação estão reunidos neste repositório do grupo.
 
 ## 📎 Links e Observações
 
@@ -64,13 +75,13 @@ Fotos originais, marcações e pesos da YOLO permanecem no Drive. A contribuiç�
 
 | Material | Acesso | Situação |
 | --- | --- | --- |
-| Entrega 1 — YOLO customizada | [Notebook executado](https://github.com/lucas-crvlh/fase6-cap1-farmtech/blob/main/notebooks/LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/lucas-crvlh/fase6-cap1-farmtech/blob/main/notebooks/LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb) | Experimentos de 30 e 60 épocas e teste final executados; contribuição publicada no repositório de Lucas |
+| Entrega 1 — YOLO customizada | [Notebook executado](https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/notebooks/LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/notebooks/LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb) | Integrada; experimentos de 30 e 60 épocas, teste reservado e resultados preservados |
 | Entrega 2 — CNN do zero | [Notebook executado](MatheusFontes_rm570457_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/MatheusFontes_rm570457_pbl_fase6.ipynb) | Integrada à `main`, com resultados e imagens classificadas |
-| Entrega 2 — YOLO padrão e comparação | Contribuição de Elton a incorporar | Ainda não integrada a este repositório |
+| Entrega 2 — YOLO padrão e comparação | [Notebook executado](EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb) | Integrada; inferência reproduzida, caixas e comparação crítica |
 | Dados, marcações e resultados da YOLO | [Google Drive do grupo](https://drive.google.com/drive/folders/1T-mHMYGu8Nj33VuK808TOb8hT5D6Q5OT) | Base comum e arquivos dos experimentos disponíveis |
-| Resumo da YOLO para comparação | [Resultados da Frente 1](https://github.com/lucas-crvlh/fase6-cap1-farmtech/blob/main/docs/RESULTADOS_FRENTE1.md) | Métricas, durações, protocolo e caminhos registrados |
+| Resumo da YOLO para comparação | [Resultados da Frente 1](https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/docs/RESULTADOS_FRENTE1.md) | Métricas, durações, protocolo e caminhos registrados |
 | Revisão dos requisitos | [Revisão da entrega](docs/REVISAO_ENTREGA.md) | Evidências e itens que faltam para concluir o trabalho |
-| Vídeo demonstrativo | Link ainda não publicado | Gravação após os resultados das três abordagens; YouTube não listado, até cinco minutos |
+| Vídeo demonstrativo | Link ainda não publicado | Resultados das três abordagens disponíveis para gravação; YouTube não listado, até cinco minutos |
 
 ### 🧠 Decisões Técnicas
 
@@ -81,7 +92,7 @@ Fotos originais, marcações e pesos da YOLO permanecem no Drive. A contribuiç�
 
 ### 📢 Observações Gerais
 
-A entrega ainda precisa reunir a YOLO padrão, a comparação crítica das três abordagens e o vídeo, além de concluir a integração dos notebooks no repositório do grupo.
+As três abordagens e a comparação estão integradas. A YOLO padrão foi reexecutada de ponta a ponta; os códigos e as saídas da YOLO customizada e da CNN foram preservados, com revisão das explicações. Falta publicar o vídeo e concluir a revisão de submissão descrita em [Revisão da entrega](docs/REVISAO_ENTREGA.md).
 
 **Prazo informado pelo grupo: 13/10/2026.** Antes da submissão, revisar execução, nomes dos arquivos, acessos e conteúdo dos links. Após a entrega no portal, manter a versão entregue congelada, conforme a orientação do enunciado.
 
@@ -91,7 +102,7 @@ A entrega ainda precisa reunir a YOLO padrão, a comparação crítica das três
 2. Abra o notebook desejado pelo link **Abrir no Colab** da tabela acima.
 3. Para a YOLO customizada, selecione uma GPU no ambiente do Colab. A CNN pode executar em CPU; registrar o dispositivo é necessário para interpretar os tempos de uma nova execução.
 4. Execute as células na ordem, autorize a montagem do Drive e ajuste o caminho da base se a sua cópia estiver em outro local. O caminho utilizado é `/content/drive/MyDrive/FIAP_fase6_grupo21/dataset_yolo/organizado`.
-5. Confira as saídas e salve o notebook com os resultados. A YOLO grava seus pesos e resultados no Drive; a CNN apresenta treinamento, gráficos e avaliação no próprio notebook.
+5. Confira as saídas e salve o notebook com os resultados. A YOLO customizada grava pesos e resultados no Drive; a YOLO padrão grava previsões e imagens em uma pasta de resultados; a CNN apresenta treinamento, gráficos e avaliação no próprio notebook.
 
 Para baixar os arquivos deste repositório:
 
@@ -99,7 +110,7 @@ Para baixar os arquivos deste repositório:
 git clone https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech.git
 ```
 
-Na execução local da CNN, utilizar Jupyter e as bibliotecas TensorFlow, NumPy, Matplotlib, scikit-learn e PyYAML, com a base baixada e `YOLO_DIR` ajustado. A execução registrada da CNN utiliza Python 3.13.5; a versão completa das dependências não foi congelada. O notebook da YOLO registra o commit do código utilizado e contém a instalação de suas dependências.
+Na execução local da CNN, utilizar Jupyter e as bibliotecas TensorFlow, NumPy, Matplotlib, scikit-learn e PyYAML, com a base baixada e `YOLO_DIR` ajustado. A execução registrada da CNN utiliza Python 3.13.5; a versão completa das dependências não foi congelada. Os notebooks YOLO registram o commit do código utilizado. A reprodução da YOLO padrão também registra [ambiente e versões](docs/resultados/yolo_padrao/ambiente_execucao.json).
 
 ## 📋 Licença
 

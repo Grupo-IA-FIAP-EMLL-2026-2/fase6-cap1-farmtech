@@ -1,0 +1,15 @@
+{
+  "python": "3.12.3",
+  "pytorch": "2.14.1+cpu",
+  "torchvision": "0.29.1+cpu",
+  "ultralytics": "8.4.176",
+  "sistema": "Linux",
+  "dispositivo": "cpu",
+  "hardware": "x86_64",
+  "cpu": "Intel(R) Core(TM) 7 150U",
+  "threads_cpu": 4,
+  "yolo_commit": "f9578796b8a64889aa9e66dc06914d19f40d338e",
+  "batch_size": 1,
+  "imgsz": 640,
+  "precisao_numerica": "FP32"
+}

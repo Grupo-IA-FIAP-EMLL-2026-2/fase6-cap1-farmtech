@@ -51,6 +51,6 @@ Cada foto possui uma marcação com o mesmo nome-base. O `data.yaml` informa os 
 5. Separação entre treino, validação e teste.
 6. Organização das pastas e configuração do `data.yaml`.
 
-O [manifesto da base usada na YOLO](https://github.com/lucas-crvlh/fase6-cap1-farmtech/blob/main/data/manifesto.csv) identifica arquivo, classe, conjunto, quantidade de caixas e hash da imagem. A conferência estrutural dessa base encontrou os 80 pares, as contagens exigidas e nenhuma imagem idêntica em bytes repetida. Isso não substitui uma revisão visual integral das caixas nem detecta fotografias apenas semelhantes.
+O [manifesto da base usada na YOLO](../data/manifesto.csv) identifica arquivo, classe, conjunto, quantidade de caixas e hash da imagem. A conferência estrutural dessa base encontrou os 80 pares, as contagens exigidas e nenhuma imagem idêntica em bytes repetida. Isso não substitui uma revisão visual integral das caixas nem detecta fotografias apenas semelhantes.
 
 A CNN converte essa estrutura em pastas por classe em uma cópia local, sem modificar o Drive. Todas as abordagens devem manter os conjuntos congelados para que a comparação use as mesmas imagens.
