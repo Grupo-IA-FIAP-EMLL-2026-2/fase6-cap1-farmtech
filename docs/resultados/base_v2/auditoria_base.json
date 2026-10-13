@@ -1,0 +1,14 @@
+{
+  "imagens": 80,
+  "sha256_distintos": 80,
+  "pares_semelhantes_para_revisao_visual": [
+    {
+      "a": "IMG-20261005-WA0051.jpg",
+      "b": "IMG-20261005-WA0054.jpg",
+      "conjunto_a": "train",
+      "conjunto_b": "train",
+      "phash": 2,
+      "dhash": 3
+    }
+  ]
+}

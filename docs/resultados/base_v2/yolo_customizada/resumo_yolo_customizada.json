@@ -1,0 +1,44 @@
+{
+  "base_versao": "base_v2_sem_duplicatas",
+  "epocas_escolhidas": 60,
+  "acertos": 7,
+  "fotos_teste": 8,
+  "acuracia_por_imagem": 0.875,
+  "metricas_teste": {
+    "precisao": 0.8928375998470715,
+    "recall": 0.7284286450953117,
+    "map50": 0.7852978383293475,
+    "map50_95": 0.5194863646210319
+  },
+  "tempo_treinamento_s": 2567.1364446080115,
+  "tempos": {
+    "preparacao_medida_ms_por_foto": 0.7,
+    "inferencia_modelo_ms_por_foto": 169.7,
+    "filtragem_caixas_ms_por_foto": 1.1,
+    "fotos_avaliadas": 8,
+    "hardware": "Intel(R) Core(TM) 7 150U",
+    "dispositivo": "cpu",
+    "batch_size": 1,
+    "imgsz": 640,
+    "base_versao": "base_v2_sem_duplicatas"
+  },
+  "ambiente": {
+    "base_versao": "base_v2_sem_duplicatas",
+    "sha256_manifesto": "a1e2b05d9dccde76b97a04ceee1f983ca7ad987ab0b795e6171eb281227225ba",
+    "python": "3.12.3",
+    "pytorch": "2.14.1+cpu",
+    "hardware": "Intel(R) Core(TM) 7 150U",
+    "dispositivo": "cpu",
+    "threads_cpu": 4,
+    "yolo_commit": "f9578796b8a64889aa9e66dc06914d19f40d338e",
+    "imgsz": 640,
+    "batch_train": 8,
+    "seed": 42,
+    "workers": 2,
+    "cache": "ram",
+    "patience": 0,
+    "pesos_iniciais_sha256": "8b3b748c1e592ddd8868022e8732fde20025197328490623cc16c6f24d0782ee"
+  },
+  "fonte_acertos": "/tmp/farmtech_base_v2/resultados/yolo_customizada/exp_60_epocas_base_v2/predicoes_por_foto_base_v2/acertos_por_foto.csv",
+  "pesos_sha256": "a191bece478da57714705fc738242e495166cd767ef7119c9a01c55b9b30a0ae"
+}

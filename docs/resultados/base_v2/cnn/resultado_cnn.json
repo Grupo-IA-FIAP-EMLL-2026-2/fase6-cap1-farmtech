@@ -1,0 +1,43 @@
+{
+  "base_versao": "base_v2_sem_duplicatas",
+  "acertos": 8,
+  "fotos_teste": 8,
+  "acuracia": 1.0,
+  "perda_teste": 0.0019176312489435077,
+  "matriz_confusao": [
+    [
+      4,
+      0
+    ],
+    [
+      0,
+      4
+    ]
+  ],
+  "tempo_treinamento_s": 21.440830156992888,
+  "tempo_inferencia_ms_por_foto": 13.42050787206972,
+  "epocas": 30,
+  "hardware": "Intel(R) Core(TM) 7 150U",
+  "entrada": "128 x 128",
+  "batch_size": 8,
+  "escopo_tempo": "predict no conjunto de teste após aquecimento; lote 8, média por imagem incluindo o pipeline",
+  "ambiente": {
+    "python": "3.12.3",
+    "tensorflow": "2.21.0",
+    "keras": "3.15.1",
+    "hardware": "Intel(R) Core(TM) 7 150U",
+    "dispositivo": "CPU",
+    "entrada": [
+      128,
+      128
+    ],
+    "batch_size": 8,
+    "epocas": 30,
+    "seed": 42,
+    "parametros": 826529,
+    "orientacao_exif": true,
+    "base_versao": "base_v2_sem_duplicatas",
+    "sha256_manifesto": "a1e2b05d9dccde76b97a04ceee1f983ca7ad987ab0b795e6171eb281227225ba"
+  },
+  "modelo_sha256": "d26e95acaa94e226eceaf26b10d3519f20e6b64bd24f6cccd92945a6318065d6"
+}

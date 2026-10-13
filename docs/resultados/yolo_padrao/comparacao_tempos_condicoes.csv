@@ -1,4 +1,0 @@
-abordagem,treinamento_segundos,epocas,inferencia_ms_por_foto,hardware,entrada,lote_inferencia,escopo_inferencia
-YOLO customizada,161.16070513199975,60.0,17.3,GPU Tesla T4,640 configurado; entradas retangulares,1,"Cálculo da rede; preparação 0,50 ms e NMS 21,40 ms separados; não é a aplicação completa"
-YOLO padrão COCO — reprodução,,,229.9407353712013,x86_64 / Intel(R) Core(TM) 7 150U,640 configurado; AutoShape preserva proporção,1,"AutoShape sobre o caminho da foto: leitura/preparação, modelo e NMS; fora da medição: carregar pesos, aquecimento, conversão em tabela, render e salvar."
-CNN do zero,15.6,30.0,9.4,CPU local (execução de Matheus),128 x 128,8,"Tempo de predict sobre o conjunto de teste, após aquecimento, dividido por oito; inclui o pipeline do predict."

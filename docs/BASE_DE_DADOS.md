@@ -1,56 +1,59 @@
-# Base de dados — Grupo 21
+# Base de dados — Grupo 21, versão v2
 
-**Responsável pela preparação e documentação:** Larissa da Silva Marcelino — RM 571790.
+**Preparação original:** Larissa da Silva Marcelino — RM 571790. **Correção e integração:** Lucas Carvalho Cordeiro — RM 570388.
 
-Este documento reúne a descrição da base que estava no README do grupo antes da adaptação ao template da FIAP. Os experimentos devem preservar a divisão comum apresentada abaixo.
+A base atual possui 80 fotos próprias do grupo. As classes são `0: banana` e `1: garrafa_pet`. Cada imagem tem um `.txt` YOLO de mesmo nome; uma foto pode ter várias caixas da mesma classe.
 
-## Objetos e marcações
-
-O conjunto contém 80 fotos, distribuídas entre banana e garrafa PET. As imagens foram reunidas pelo grupo e os objetos foram marcados manualmente no Make Sense IA com caixas delimitadoras.
-
-As marcações foram exportadas no formato YOLO, com um arquivo `.txt` para cada imagem. Os IDs são `0: banana` e `1: garrafa_pet`. As coordenadas das caixas são normalizadas. Uma foto pode conter mais de um objeto anotado; na base utilizada, os objetos alvo de cada foto pertencem a uma mesma classe.
-
-## Divisão dos dados
+## Divisão preservada
 
 | Conjunto | Banana | Garrafa PET | Total |
 | --- | ---: | ---: | ---: |
 | Treino | 32 | 32 | 64 |
 | Validação | 4 | 4 | 8 |
 | Teste | 4 | 4 | 8 |
-| **Total** | **40** | **40** | **80** |
+| Total | 40 | 40 | 80 |
 
-A preparação registrada por Larissa informa uma separação estratificada por script no Colab, com seed 42. A execução da YOLO customizada e a conversão usada pela CNN confirmam as contagens 64/8/8.
+A divisão original, preparada com seed 42, foi mantida. Não houve sorteio de uma nova divisão depois de consultar os resultados. Todos os modelos usam exatamente os mesmos conjuntos da versão v2.
 
-## Armazenamento e estrutura
+## Correção das fotografias
 
-[Google Drive do grupo](https://drive.google.com/drive/folders/1T-mHMYGu8Nj33VuK808TOb8hT5D6Q5OT).
+Quatro cópias redimensionadas identificadas na auditoria foram substituídas pelas novas fotos enviadas pelo grupo. Os nomes e conjuntos foram preservados:
+
+| Arquivo | Conjunto | Foto nova enviada |
+| --- | --- | --- |
+| IMG-20261005-WA0108.jpg | Treino | WhatsApp Image (1).jpeg |
+| IMG-20261005-WA0109.jpg | Treino | WhatsApp Image (2).jpeg |
+| IMG-20261005-WA0111.jpg | Treino | WhatsApp Image .jpeg |
+| IMG-20261005-WA0112.jpg | Teste | WhatsApp Image (3).jpeg |
+
+O [registro da correção](../data/correcao_base_v2.json) contém os nomes completos da origem, hashes antigos e novos e coordenadas. Quatorze JPEGs de câmera tinham dados após o marcador final do JPEG; foram normalizados com orientação EXIF correta antes de criar o manifesto e treinar. Isso impede que a rotina da YOLO regrave as fotos silenciosamente. As caixas dessas imagens foram conferidas em uma [montagem](figuras/base_v2/marcacoes_camera_normalizadas.jpg).
+
+## Marcação e revisão no Make Sense IA
+
+As 76 marcações preservadas vieram da preparação original no Make Sense IA. As quatro novas caixas foram inicialmente definidas por coordenadas de pixels, importadas no Make Sense IA, conferidas visualmente e exportadas no formato YOLO. A operação ocorreu em um navegador local com a rede bloqueada após carregar a aplicação.
+
+[Registro da revisão](../data/revisao_makesense_base_v2.json) e [capturas das quatro fotos](figuras/base_v2/makesense/revisao_1.png). O pacote de exportação está na publicação base-v2. O Make Sense exporta seis casas decimais; os arquivos congelados do treino mantêm oito casas, com diferença inferior a 0,001 pixel. A revisão não alterou a base enquanto os modelos treinavam.
+
+## Manifesto e auditoria
+
+O [manifesto atual](../data/manifesto.csv) registra arquivo, conjunto, classe, caixas e SHA-256. O [script de auditoria](../scripts/auditar_base.py) verifica os 80 pares, contagens, hashes, IDs, coordenadas e semelhança perceptual. A [auditoria após os treinos](resultados/base_v2/auditoria_base.json) confirma que os JPEGs não foram alterados durante a execução.
+
+Não há imagens repetidas em bytes ou pares com pHash e dHash idênticos. Uma dupla de capturas visualmente próximas, `IMG-20261005-WA0051.jpg` e `IMG-20261005-WA0054.jpg`, permanece exclusivamente no treino. São fotos diferentes da mesma cena; essa proximidade é uma limitação documentada. Os limiares de hashes perceptuais são uma triagem, não uma prova de independência de todas as cenas.
+
+## Arquivos e reprodução
+
+A [publicação base-v2](https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/releases/tag/base-v2) contém `dataset_farmtech_grupo21_v2.zip`, com 80 imagens, 80 arquivos de marcação, `data.yaml`, manifesto e registro da correção. Os hashes para download são publicados junto dos arquivos. A CNN converte essa estrutura em uma cópia local por classe com orientação EXIF, sem mudar os originais.
+
+No Colab, os notebooks montam o Drive pessoal, baixam e conferem a versão correta e a armazenam nesta estrutura:
 
 ```text
-FIAP_fase6_grupo21/
-└── dataset_yolo/
-    └── organizado/
-        ├── data.yaml
-        ├── images/
-        │   ├── train/
-        │   ├── val/
-        │   └── test/
-        └── labels/
-            ├── train/
-            ├── val/
-            └── test/
+FIAP_fase6_grupo21_base_v2/
+├── dataset_yolo/organizado/
+│   ├── data.yaml
+│   ├── manifesto.csv
+│   ├── images/{train,val,test}/
+│   └── labels/{train,val,test}/
+└── resultados_farmtech_v2/
 ```
 
-Cada foto possui uma marcação com o mesmo nome-base. O `data.yaml` informa os nomes das classes e os caminhos dos conjuntos. Seu caminho absoluto deve ser ajustado se a base for copiada para outro ambiente.
-
-## Preparação realizada
-
-1. Coleta e seleção de 40 imagens de cada classe.
-2. Marcação dos objetos no Make Sense IA.
-3. Exportação dos arquivos no formato YOLO.
-4. Conferência dos pares de imagens e marcações e dos IDs de classe.
-5. Separação entre treino, validação e teste.
-6. Organização das pastas e configuração do `data.yaml`.
-
-O [manifesto da base usada na YOLO](../data/manifesto.csv) identifica arquivo, classe, conjunto, quantidade de caixas e hash da imagem. A conferência estrutural dessa base encontrou os 80 pares, as contagens exigidas e nenhuma imagem idêntica em bytes repetida. Isso não substitui uma revisão visual integral das caixas nem detecta fotografias apenas semelhantes.
-
-A CNN converte essa estrutura em pastas por classe em uma cópia local, sem modificar o Drive. Todas as abordagens devem manter os conjuntos congelados para que a comparação use as mesmas imagens.
+[Drive original do grupo](https://drive.google.com/drive/folders/1T-mHMYGu8Nj33VuK808TOb8hT5D6Q5OT): a pasta compartilhada não deve ser confundida com a publicação v2. A situação real de sua atualização está indicada no README. Os resultados antigos ficam no [histórico da base v1](historico/README.md).

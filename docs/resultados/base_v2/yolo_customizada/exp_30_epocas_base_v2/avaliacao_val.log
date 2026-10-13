@@ -1,0 +1,11 @@
+YOLOv5 🚀 f957879 Python-3.12.3 torch-2.14.1+cpu CPU
+
+Fusing layers... 
+Model summary: 68 layers, 7,015,519 parameters, 0 gradients, 15.8 GFLOPs
+[34m[1mval: [0mScanning /tmp/farmtech_base_v2/organizado/labels/val.cache... 8 images, 0 backgrounds, 0 corrupt
+[K                 Class     Images  Instances          P          R      mAP50   mAP50-95: 100% ━━━━━━━━━━━━ 1/1 21.8s/it 21.8s
+                   all          8         23      0.817      0.654       0.77      0.463
+                banana          8         19      0.633      0.632      0.713      0.355
+           garrafa_pet          8          4          1      0.676      0.828      0.571
+Speed: 1.9ms pre-process, 2431.1ms inference, 16.4ms NMS per image at shape (16, 3, 640, 640)
+Results saved to [1m/tmp/farmtech_base_v2/resultados/yolo_customizada/exp_30_epocas_base_v2/validacao[0m

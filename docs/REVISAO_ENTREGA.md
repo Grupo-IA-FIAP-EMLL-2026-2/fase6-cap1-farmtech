@@ -1,51 +1,39 @@
 # Revisão da entrega — Fase 6, Grupo 21
 
-**Revisão e integração em 12/10/2026.** Referências: enunciado fornecido pelo grupo, [template da Fase 6 da FIAP](https://github.com/fiap-tutoria/FIAP-PORTFOLIO-AI/blob/master/1TIAO/FASE6/CAP-X-NOME-DA-ATIVIDADE-APRESENTADA-NO-PORTAL/README.md) e evidências executadas dos três notebooks.
+**Versão v2 revisada em 13/10/2026**, após substituir quatro fotografias repetidas. Referência: enunciado fornecido pelo grupo e template FIAP indicado no README.
 
-**Parecer:** as três abordagens e a comparação estão integradas ao repositório do grupo. Falta publicar o vídeo demonstrativo e concluir a conferência da submissão.
+Os três notebooks foram executados novamente, com saídas reais e sem células de erro. A parte técnica está disponível para a gravação; publicar o vídeo e submeter no portal ainda são ações do grupo.
 
-## Entrega 1 — YOLO customizada
+## Entrega 1
 
-- [Notebook de Lucas](../notebooks/LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb) integrado com 13 células de código executadas, sem saídas de erro; código, saídas e contadores originais preservados.
-- Base com 40 fotos por classe e divisão 32/4/4 por classe: 64/8/8 no total.
-- Dois experimentos independentes, de 30 e 60 épocas; escolha pela validação antes do teste.
-- Teste: 7/8 classes de fotos corretas, mAP@50 de 83,74% e mAP@50–95 de 55,63%.
-- Imagens processadas, curvas, interpretação de erros, configurações e resultados disponíveis no notebook e nos documentos de apoio.
+- [YOLO customizada](../notebooks/LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb): base com 40 fotos por classe, divisão 32/4/4 por classe, manifesto congelado e marcações revisadas.
+- Dois treinamentos independentes, exatamente 30 e 60 épocas. O experimento de 60 épocas foi escolhido pela validação antes de avaliar o teste.
+- Teste: 7/8 classes corretas por foto; mAP@50 78,53%; mAP@50–95 51,95%.
+- Curvas, métricas, caixas, previsões individuais, tempos e condições estão no notebook e em [resultados](RESULTADOS_FRENTE1.md).
 
-## Entrega 2 — YOLO padrão, CNN e comparação
+## Entrega 2
 
-- [Notebook de Elton](../EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb) corrigido e executado de ponta a ponta nesta integração. Usa YOLOv5s pré-treinada no COCO, sem treino na base do grupo. O enunciado remete ao capítulo 3; o grupo deve confirmar se a variante prevista no material da turma corresponde a esta implementação.
-- A reprodução verificou os hashes das oito imagens contra o manifesto, confirmou 5/8 acertos e gerou oito imagens com as previsões e uma galeria. O resultado original de Elton também foi preservado com link, hash e métricas.
-- [Notebook de Matheus](../MatheusFontes_rm570457_pbl_fase6.ipynb) integrado: CNN própria em Keras, treinada do zero, 30 épocas, 8/8 fotos corretas. Foram revisadas somente explicações; o código, as saídas e os contadores originais permanecem iguais.
-- A comparação utiliza acerto por foto no mesmo teste: YOLO customizada 87,50%, padrão 62,50% e CNN 100%. As métricas de detecção ficam separadas e a amostra pequena é explicitada.
-- A análise discute facilidade de integração, qualidade, treinamento quando aplicável e inferência. Informa as diferenças de hardware, entrada, lote e etapas medidas, sem declarar um vencedor de velocidade a partir de condições distintas.
+- [YOLO padrão e comparação](../EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb): inferência COCO reexecutada nas oito fotos da base v2, 5/8 classes corretas. Não foi treinada na base do grupo.
+- [CNN](../MatheusFontes_rm570457_pbl_fase6.ipynb): arquitetura própria inicializada aleatoriamente, treinada novamente por 30 épocas; 8/8 classes corretas.
+- A [comparação](resultados/base_v2/yolo_padrao/comparacao_acertos_teste.csv) usa o mesmo teste e previsões efetivas dos três modelos. [Resultado por foto](resultados/base_v2/yolo_padrao/comparacao_por_foto.csv) e [tempos/condições](resultados/base_v2/yolo_padrao/comparacao_tempos_condicoes.csv) estão registrados.
+- A análise cobre integração, qualidade, treinamento, inferência, detecção versus classificação e limitações do teste. Todos os tempos atuais são da nova execução em CPU, com diferenças de resolução, lote e etapas explícitas.
 
-## Evidências da integração
+## Identificação e submissão
 
-- [Comparação dos acertos](resultados/yolo_padrao/comparacao_acertos_teste.csv).
-- [Comparação por foto](resultados/yolo_padrao/comparacao_por_foto.csv).
-- [Tempos e condições](resultados/yolo_padrao/comparacao_tempos_condicoes.csv).
-- [Caixas previstas pela YOLO padrão](resultados/yolo_padrao/caixas_yolo_padrao.csv).
-- [Galeria de teste](figuras/yolo_padrao/galeria_teste.png).
-- [Origem da contribuição de Elton](resultados/yolo_padrao/origem_contribuicao.json) e [referências da comparação](resultados/yolo_padrao/referencias_comparacao.json).
-
-## Identificação, README e submissão
-
-| Item | Situação |
+| Item | Estado |
 | --- | --- |
-| Repositório público | Organização do grupo, com os três notebooks e evidências selecionadas |
-| Integrantes e RMs | Lucas Carvalho Cordeiro 570388; Larissa da Silva Marcelino 571790; Elton Modesto de Souza Dias 572530; Matheus Fontes 570457 |
+| Repositório público | Organização do grupo, notebooks e evidências da base v2 |
+| Integrantes e RMs | Lucas 570388; Larissa 571790; Elton 572530; Matheus 570457 |
 | Tutora | Nicolly Candida |
-| Nome dos notebooks | Nomes completos, RM e sufixo pbl_fase6.ipynb; arquivo de Elton corrigido na integração |
-| README FIAP | Apresentação introdutória, logo, integrantes, professores, estrutura real, links e execução |
-| Nome do grupo no repositório | Grupo 21 identificado no README. O enunciado pede nome do grupo no repositório; revisar a nomenclatura final para cumprir literalmente esse item |
-| Vídeo | Pendente: até cinco minutos, YouTube não listado, link direto no README |
-| Prazo | Informado pelo grupo: 13/10/2026; não alterar a versão após a submissão |
+| Nomes de notebooks | Nomes completos, RM e sufixo pbl_fase6.ipynb |
+| README | Template FIAP, apresentação, estrutura, links e execução atualizados |
+| Dados/modelos | Publicação base-v2 com arquivos, hashes e manifesto |
+| Drive compartilhado | Consultar situação real no README; Colab prepara a cópia pessoal v2 |
+| Vídeo | Gravar com os resultados novos, publicar no YouTube não listado, até cinco minutos e inserir o link no README |
+| Prazo | Informado pelo grupo: 13/10/2026; congelar a versão após submeter |
 
-Antes de enviar, conferir os acessos com a conta que fará a avaliação, confirmar a abordagem de YOLO do capítulo 3, conferir as execuções no ambiente escolhido, gravar o vídeo e revisar seu link. O material do capítulo 3 não foi fornecido nesta revisão; não se afirma conformidade de uma versão específica por inferência.
+O barema atribui 3,0 ao notebook, 2,0 ao README, 2,0 ao vídeo, 1,5 ao repositório e 1,5 à organização. Os módulos Ir Além são opcionais e não compõem a nota obrigatória.
 
-O barema reserva 3,0 pontos ao notebook, 2,0 ao README, 2,0 ao vídeo, 1,5 ao repositório e 1,5 à organização. Os módulos “Ir Além” são opcionais e não compõem a nota das entregas obrigatórias.
+O enunciado pede nome do grupo no nome do repositório. O Grupo 21 está identificado no README e na organização, mas o repositório mantém `fase6-cap1-farmtech`; esse detalhe literal deve ser confirmado antes da submissão. A YOLO padrão é a versão da contribuição original; o material do capítulo 3 não foi fornecido para confirmar a variante da turma. A execução atual foi em CPU local; os notebooks incluem montagem do Drive e reprodução no Colab, e a primeira execução Colab/T4 foi preservada no histórico. Não se afirma que a nova execução ocorreu numa GPU.
 
-## Limites da revisão
-
-A YOLO padrão e a consolidação das tabelas foram realmente executadas nesta integração. Os treinamentos da YOLO customizada e da CNN não foram refeitos; a revisão preservou seus códigos e saídas e verificou a correspondência com as evidências. A base tem somente oito fotos de teste, sem avaliação independente adicional ou medição controlada de velocidade das três redes. A publicação no GitHub não equivale à submissão no portal da FIAP.
+Antes da entrega: conferir o vídeo e seus acessos, confirmar os dois detalhes do enunciado acima e submeter o link correto no portal. A publicação no GitHub não equivale à submissão. Oito fotos de teste e cenas próximas limitam a generalização; remover cópias não elimina todas as semelhanças entre fotografias.

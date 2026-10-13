@@ -23,3 +23,12 @@ dataset_yolo/
 fotos_originais/
 cnn_dataset/
 runs/
+
+# Evidências completas dos novos experimentos
+!docs/resultados/base_v2/**/results.csv
+!docs/resultados/base_v2/**/treinamento.log
+!docs/resultados/base_v2/**/opt.yaml
+!docs/resultados/base_v2/**/hyp.yaml
+!docs/resultados/base_v2/**/train_batch*.jpg
+!docs/resultados/base_v2/**/labels.jpg
+!docs/resultados/base_v2/**/labels_correlogram.jpg

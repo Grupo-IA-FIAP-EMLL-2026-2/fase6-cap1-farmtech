@@ -1,0 +1,6 @@
+{
+  "epocas_escolhidas": 60,
+  "criterio": "maior mAP@50-95 de validação",
+  "modelo": "/tmp/farmtech_base_v2/resultados/yolo_customizada/exp_60_epocas_base_v2/weights/best.pt",
+  "base_versao": "base_v2_sem_duplicatas"
+}

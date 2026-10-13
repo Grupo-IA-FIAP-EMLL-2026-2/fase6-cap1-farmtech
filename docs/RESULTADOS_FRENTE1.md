@@ -1,80 +1,58 @@
-# Resultados da Frente 1 — YOLO customizada
+# Resultados da Frente 1 — YOLO customizada, base v2
 
-**Autor:** Lucas Carvalho Cordeiro — RM 570388. **Grupo:** 21. **Execução:** 12/10/2026, Google Colab com GPU Tesla T4.
+**Autor:** Lucas Carvalho Cordeiro — RM 570388. **Grupo 21. Tutora:** Nicolly Candida.
 
-A contribuição está no [notebook executado](../notebooks/LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb). Este resumo fornece os dados necessários para integrar a comparação com a YOLO padrão e a CNN. Os resultados completos e as conclusões estão no notebook.
+[Notebook executado](../notebooks/LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb). Os resultados abaixo foram gerados novamente após corrigir a base; não são os valores antigos da Tesla T4.
 
-## Modelo e protocolo
+## Protocolo da nova execução
 
-- YOLOv5s ajustada para `0: banana` e `1: garrafa_pet`, a partir dos pesos iniciais pré-treinados `yolov5s.pt`.
-- Dois treinamentos independentes de 30 e 60 épocas, com o mesmo conjunto e os mesmos parâmetros explícitos: tamanho configurado 640, lote 16, seed 42, cache em RAM, workers 2, GPU e parada antecipada desativada.
-- Base comum: 64 fotos de treino, 8 de validação e 8 de teste; 32/4/4 por classe, conforme o [manifesto](../data/manifesto.csv).
-- Escolha pelo maior mAP@50–95 na validação, usando o `best.pt` de cada experimento. O escolhido foi o do treinamento de 60 épocas. O teste foi aplicado ao escolhido após essa decisão.
-- Os CSVs de treinamento confirmam 30 linhas com épocas de 0 a 29 e 60 linhas de 0 a 59. `best.pt` pode representar uma época anterior à última.
+YOLOv5s a partir dos pesos COCO; código oficial fixado no commit `f9578796b8a64889aa9e66dc06914d19f40d338e`. Dois treinamentos independentes de 30 e 60 épocas: imagem 640, lote 8, seed 42, cache RAM, workers 2 e parada antecipada desativada. O lote foi reduzido de 16 para 8 porque a nova execução usa CPU e o lote anterior excedeu a memória disponível. Os dois novos experimentos têm as mesmas condições.
+
+A base v2 contém 40 fotos por classe, com 32/4/4. Quatro cópias foram substituídas; 14 JPEGs foram normalizados antes do manifesto para impedir a regravação automática pela YOLO. A [correção está documentada](../data/correcao_base_v2.json).
+
+**Hardware:** Intel(R) Core(TM) 7 150U. **Ambiente:** Python 3.12.3, PyTorch 2.14.1+cpu, CPU. Os CSVs registram exatamente 30 e 60 épocas, iniciando em zero; `best.pt` pode ser de uma época anterior à última.
 
 ## Validação dos dois experimentos
 
-| Épocas | Precisão (%) | Recall (%) | mAP@50 (%) | mAP@50–95 (%) | Duração da execução (min) |
+| Épocas | Precisão (%) | Recall (%) | mAP@50 (%) | mAP@50–95 (%) | Duração (min) |
 | ---: | ---: | ---: | ---: | ---: | ---: |
-| 30 | 72,11 | 86,14 | 81,29 | 41,23 | 1,85 |
-| 60 | 91,95 | 86,84 | 90,00 | 66,17 | 2,69 |
+| 30 | 81,67 | 65,38 | 77,05 | 46,30 | 23,15 |
+| 60 | 96,90 | 70,49 | 83,16 | 59,19 | 42,79 |
 
-A duração de execução foi de **111,075986 s** e **161,160705 s**, respectivamente. Inclui o processo de treinamento, validações e gravação dos resultados; exclui o download inicial dos pesos. Não equivale apenas ao tempo de cálculo de treinamento na GPU.
+O modelo escolhido foi o **`best.pt` do experimento de 60 épocas**, pelo maior mAP@50–95 de validação. O teste foi avaliado apenas depois dessa escolha. Duração inclui o processo de treinamento, validações e gravação; exclui baixar pesos e preparar a base.
 
-Fontes: [comparação CSV](resultados/frente1_yolo/comparacao_validacao_yolo.csv), [registros de 30 épocas](resultados/frente1_yolo/exp_30_epocas_20261012_194929/) e [registros de 60 épocas](resultados/frente1_yolo/exp_60_epocas_20261012_200853/).
+Fonte: [comparação de validação](resultados/base_v2/yolo_customizada/comparacao_validacao_yolo.csv).
 
-## Teste do modelo escolhido
+## Teste reservado
 
-| Modelo | Precisão (%) | Recall (%) | mAP@50 (%) | mAP@50–95 (%) |
-| --- | ---: | ---: | ---: | ---: |
-| YOLOv5s — treinamento de 60 épocas, `best.pt` | 90,87 | 72,92 | 83,74 | 55,63 |
+| Precisão (%) | Recall (%) | mAP@50 (%) | mAP@50–95 (%) |
+| ---: | ---: | ---: | ---: |
+| 89,28 | 72,84 | 78,53 | 51,95 |
 
-Fonte: [CSV do teste](resultados/frente1_yolo/resultado_teste_yolo.csv).
+**Acerto da classe por foto: 7/8 = 87,50%.** A regra seleciona a caixa de maior confiança a partir de 0,25; ausência de detecção é erro. Esse indicador é usado na comparação com a CNN; mAP avalia caixas e não é acurácia de classificação.
 
-Para a comparação com a CNN, a regra foi: **filtrar as duas classes, escolher a detecção de maior confiança a partir de 0,25 e contar ausência de detecção como erro**. O resultado foi **7/8 fotos corretas = 87,50%**, com **12,50% de erro**. Banana: 4/4; garrafa PET: 3/4. O erro foi `IMG-20261005-WA0044.jpg`, sem detecção.
-
-Fonte: [previsões por foto](resultados/frente1_yolo/exp_60_epocas_20261012_200853/predicoes_por_foto_20261012_210135/acertos_por_foto.csv).
-
-Essa medida avalia a classe da foto; algumas bananas ficaram sem detecção mesmo nas fotos cuja classe foi acertada. Não comparar mAP de detecção com acurácia da CNN como se fossem o mesmo indicador. A CNN deve usar as mesmas oito fotos de teste. A YOLO padrão deve mapear seus IDs reais para as classes correspondentes.
+Fontes: [teste](resultados/base_v2/yolo_customizada/resultado_teste_yolo.csv) e [previsões por foto](resultados/base_v2/yolo_customizada/exp_60_epocas_base_v2/predicoes_por_foto_base_v2/acertos_por_foto.csv).
 
 ## Tempo de inferência
 
-| Etapa medida por `detect.py` | Média por foto |
+| Etapa do detect.py | Média por foto |
 | --- | ---: |
-| Preparação do tensor | 0,50 ms |
-| Cálculo do modelo | 17,30 ms |
-| Filtragem de caixas — NMS | 21,40 ms |
+| Preparação do tensor | 0,70 ms |
+| Cálculo da rede | 169,70 ms |
+| NMS | 1,10 ms |
 
-**Condições:** Tesla T4, lote 1, FP32 (`half=False`), `imgsz=640`, confiança mínima 0,25, IoU de NMS 0,60, máximo de 300 caixas e classes 0/1. As entradas reais registradas são de 640×480 ou 640×384. A média corresponde a uma execução das oito fotos após o aquecimento interno da rotina.
+Lote 1, FP32, tamanho configurado 640, confiança 0,25 e IoU NMS 0,60. Entradas retangulares preservam proporção. Leitura completa, carregamento dos pesos e gravação das imagens não integram essa soma. A [comparação das três abordagens](../EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb) informa os diferentes escopos dos tempos.
 
-Os tempos não incluem todo o processo de leitura/redimensionamento, carregamento do modelo e gravação das imagens. A soma das etapas medidas é 39,20 ms, mas não é o tempo completo da aplicação. Para comparar, registrar hardware, resolução, lote e etapas incluídas de cada abordagem. Se houver outro protocolo de medição, apresentá-lo separadamente e explicitar a diferença.
+## Acesso aos dados e modelos
 
-Fontes: [tempos JSON](resultados/frente1_yolo/exp_60_epocas_20261012_200853/predicoes_por_foto_20261012_210135/tempos_inferencia.json) e [registro original](resultados/frente1_yolo/exp_60_epocas_20261012_200853/predicoes_por_foto_20261012_210135/log_inferencia.txt).
+A [publicação base-v2](https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/releases/tag/base-v2) reúne a base corrigida, os pesos de 30/60 épocas, o modelo escolhido e a CNN. O notebook baixa a base verificando o SHA-256; no Colab, monta o Drive pessoal e salva a versão v2 numa pasta própria, sem precisar escrever na pasta compartilhada antiga.
 
-## Arquivos no Drive
+## Limitações
 
-[Pasta de resultados](https://drive.google.com/drive/folders/1EVA4QXNJNF10vW1OiszZ1bTl0X2RtXU6).
+São apenas oito fotos de teste, com cenas e objetos de sessões próximas. A correção remove as cópias identificadas, mas não demonstra desempenho universal. Os resultados antigos ficam no [histórico da base v1](historico/README.md). Hardware e lote mudaram, portanto a diferença para as antigas execuções não pode ser atribuída somente às fotos substituídas.
 
-| Material | Link |
-| --- | --- |
-| Experimento de 30 épocas | [Pasta](https://drive.google.com/drive/folders/1R50y4zJWgg3gn74tfwMUIaH8oE5Wvyd_) |
-| Experimento de 60 épocas | [Pasta](https://drive.google.com/drive/folders/1Op-7eRXBngeqHyPpuFWDbvGdGWMSsz-x) |
-| Modelo escolhido | [best.pt de 60 épocas](https://drive.google.com/file/d/1cYQePSUJ_-xP7tWWdlYahTBRPNZKhWwc/view) |
-| Teste e gráficos | [Pasta](https://drive.google.com/drive/folders/1ANo-hY_xPMw871ta3uPtwawT_aQF7Wbk) |
-| Previsões individuais | [Pasta](https://drive.google.com/drive/folders/1HSx6pCi_C-JvG8XUBJrhHJGklT40YTsM) |
+## Exemplo de falha real
 
-Caminho do modelo no Colab:
+Na foto `IMG-20261005-WA0044.jpg`, a YOLO customizada e a padrão não encontraram uma caixa acima de confiança 0,25; a CNN classificou a foto como garrafa PET. A garrafa é transparente, está deitada e tem reflexos sobre uma superfície metálica de pouco contraste. Essas condições são hipóteses para investigar, não uma causa isolada pelo experimento. Uma melhoria seria coletar mais exemplos dessas condições e testar em novas cenas.
 
-```text
-/content/drive/MyDrive/FIAP_fase6_grupo21/resultados_yolo/exp_60_epocas_20261012_200853/weights/best.pt
-```
-
-## Ambiente e limites da revisão
-
-O notebook registra o commit YOLOv5 `f9578796b8a64889aa9e66dc06914d19f40d338e`. O log registra Python `3.13.15` e PyTorch `2.11.0+cu130`. As versões completas das dependências não foram congeladas. Para repetir com o mesmo código, fixar o commit antes da instalação, conforme a orientação no notebook.
-
-A revisão verificou a estrutura do notebook, a sintaxe das 13 células e do script de avaliação, os contadores de execução, a ausência de saídas de erro, as imagens incorporadas e a correspondência entre métricas, CSVs, configurações e tempos no Drive. O código e as saídas originais foram preservados. O treinamento não foi reexecutado localmente.
-
-Os arquivos copiados têm origem e SHA-256 registrados em [origem_dos_arquivos.json](resultados/frente1_yolo/origem_dos_arquivos.json). O manifesto identifica a base conferida antes dos treinamentos; ele não detecta fotos apenas semelhantes nem comprova revisão visual integral das caixas.
-
-A YOLO customizada, a YOLO padrão, a CNN e a comparação completa estão integradas ao repositório do grupo, com identificação dos quatro integrantes. A [comparação da Entrega 2](../EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb) separa acertos por foto, métricas de detecção e condições de medição. O vídeo demonstrativo ainda precisa ser publicado no README.
+[Imagem processada da falha](resultados/base_v2/yolo_customizada/exp_60_epocas_base_v2/predicoes_por_foto_base_v2/IMG-20261005-WA0044.jpg).

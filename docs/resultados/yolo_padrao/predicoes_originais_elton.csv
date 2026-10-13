@@ -1,9 +1,0 @@
-arquivo,classe_real,predicao_yolo_padrao,confianca,acertou,tempo_inferencia_ms
-20261009_191256.jpg,garrafa_pet,garrafa_pet,0.776662,True,440.143533
-20261011_220831.jpg,banana,banana,0.870694,True,1461.059539
-20261011_221012.jpg,banana,banana,0.676561,True,1208.247244
-IMG-20261005-WA0006.jpg,banana,banana,0.668321,True,867.220796
-IMG-20261005-WA0008.jpg,banana,banana,0.420469,True,874.444965
-IMG-20261005-WA0044.jpg,garrafa_pet,sem_deteccao,NaN,False,908.815913
-IMG-20261005-WA0060.jpg,garrafa_pet,sem_deteccao,NaN,False,887.130224
-IMG-20261005-WA0112.jpg,garrafa_pet,sem_deteccao,NaN,False,852.177826

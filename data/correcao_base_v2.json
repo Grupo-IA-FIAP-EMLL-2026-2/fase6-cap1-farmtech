@@ -1,0 +1,195 @@
+{
+  "versao": "base_v2_sem_duplicatas",
+  "base_anterior_commit": "1d0550e039eaac65c5c614f8cde5650420b7f09f",
+  "substituicoes": [
+    {
+      "arquivo": "IMG-20261005-WA0108.jpg",
+      "conjunto": "train",
+      "arquivo_recebido": "WhatsApp Image 2026-10-12 at 11.01.46 PM (1).jpeg",
+      "sha256_anterior": "b6a1584ce09f8335069a76f6c9e5b1443c2c83459e780debc87256b7d03044eb",
+      "sha256_novo": "faa2220a8e570b5420e1821968afed49d84a6471152c7d9c498e156050106278",
+      "caixa_xyxy": [
+        397,
+        260,
+        748,
+        1375
+      ],
+      "dimensoes": [
+        1200,
+        1600
+      ],
+      "marcacao": "Manual, coordenadas normalizadas YOLO; classe 1 garrafa_pet; revisada visualmente."
+    },
+    {
+      "arquivo": "IMG-20261005-WA0109.jpg",
+      "conjunto": "train",
+      "arquivo_recebido": "WhatsApp Image 2026-10-12 at 11.01.46 PM (2).jpeg",
+      "sha256_anterior": "e0887752f99b9772186e946fc97861f15133049c0cd8569d390d8811c05cdf20",
+      "sha256_novo": "d8d71666af7456cf69972d9483306d8857402c4fa79e2bcb6d59a1439762c1c9",
+      "caixa_xyxy": [
+        393,
+        93,
+        814,
+        1490
+      ],
+      "dimensoes": [
+        1200,
+        1600
+      ],
+      "marcacao": "Manual, coordenadas normalizadas YOLO; classe 1 garrafa_pet; revisada visualmente."
+    },
+    {
+      "arquivo": "IMG-20261005-WA0111.jpg",
+      "conjunto": "train",
+      "arquivo_recebido": "WhatsApp Image 2026-10-12 at 11.01.46 PM.jpeg",
+      "sha256_anterior": "16f4ffebbfe03018550c420fe29369dc5bb5dda971e07e0a4907b26ee20921ef",
+      "sha256_novo": "e270cebc79b7a2e9c0d351fc007d3564e235f320584a6a4dfcfb38dfb76932f9",
+      "caixa_xyxy": [
+        380,
+        265,
+        741,
+        1442
+      ],
+      "dimensoes": [
+        1200,
+        1600
+      ],
+      "marcacao": "Manual, coordenadas normalizadas YOLO; classe 1 garrafa_pet; revisada visualmente."
+    },
+    {
+      "arquivo": "IMG-20261005-WA0112.jpg",
+      "conjunto": "test",
+      "arquivo_recebido": "WhatsApp Image 2026-10-12 at 11.01.46 PM (3).jpeg",
+      "sha256_anterior": "3e9396042306ee1d696f700f4ac03adac9a20504986d29e156a798ff84c5d4de",
+      "sha256_novo": "3afde1b734b9decb9e8fb29fad3aeae6c4eddd90e6ea094d88cfcd727b4f39ed",
+      "caixa_xyxy": [
+        293,
+        126,
+        901,
+        1523
+      ],
+      "dimensoes": [
+        1200,
+        1600
+      ],
+      "marcacao": "Manual, coordenadas normalizadas YOLO; classe 1 garrafa_pet; revisada visualmente."
+    }
+  ],
+  "normalizacoes_jpeg": [
+    {
+      "arquivo": "20261009_191256.jpg",
+      "conjunto": "test",
+      "sha256_recebido": "8236af3386093a123c563b62a81e583f7591eed0f5b8016ddcda174c28eed151",
+      "sha256_normalizado": "9937ada70178bc731201993af79996e1b748deb3b1cb5d21d25fc4205f047aae",
+      "motivo": "JPEG sem EOI no final, normalizado previamente com a mesma rotina do YOLOv5; orientação EXIF aplicada e JPEG qualidade 100, subsampling 0."
+    },
+    {
+      "arquivo": "20261011_220831.jpg",
+      "conjunto": "test",
+      "sha256_recebido": "acdbf0d15dde08d871aa3d6c6d1168a436336d7e136b3d62f072def15faf1b7a",
+      "sha256_normalizado": "94e4fae57f70a3e6cf7793e53cfd35117e9297447aa5e6088c52447b8668e246",
+      "motivo": "JPEG sem EOI no final, normalizado previamente com a mesma rotina do YOLOv5; orientação EXIF aplicada e JPEG qualidade 100, subsampling 0."
+    },
+    {
+      "arquivo": "20261011_221012.jpg",
+      "conjunto": "test",
+      "sha256_recebido": "9af9bb82d5c03c58729207489805926b4d26e604ea428add316b0c566edfdeb4",
+      "sha256_normalizado": "7a92277952f6c3696e7479612b5d5ddbe30b69d9315a8a87fa9c636e3b3bad7b",
+      "motivo": "JPEG sem EOI no final, normalizado previamente com a mesma rotina do YOLOv5; orientação EXIF aplicada e JPEG qualidade 100, subsampling 0."
+    },
+    {
+      "arquivo": "20261009_191206.jpg",
+      "conjunto": "train",
+      "sha256_recebido": "5dfb0f4160810adcd9a589486398e71c6c79e174d7952d52a1bbd70cec7242ab",
+      "sha256_normalizado": "1c69852afa937127d2076a3b8ab838a994ba392b025cfc9722fc1608d23d8f75",
+      "motivo": "JPEG sem EOI no final, normalizado previamente com a mesma rotina do YOLOv5; orientação EXIF aplicada e JPEG qualidade 100, subsampling 0."
+    },
+    {
+      "arquivo": "20261009_191214.jpg",
+      "conjunto": "train",
+      "sha256_recebido": "4403b2342e3c82344362ce32009d0a5dbba06fa74c872a6f8ebc0c24d5176522",
+      "sha256_normalizado": "e81d7efe0edaf2d3e829e5e52d4646506a65db9effd2b3264bf80955def9f040",
+      "motivo": "JPEG sem EOI no final, normalizado previamente com a mesma rotina do YOLOv5; orientação EXIF aplicada e JPEG qualidade 100, subsampling 0."
+    },
+    {
+      "arquivo": "20261009_191333.jpg",
+      "conjunto": "train",
+      "sha256_recebido": "a07803ee97f002298c6e815a1e2f90b1466d74acc3971e52a50c93a0a9060dd8",
+      "sha256_normalizado": "dc451575f009c76d47abda14b9b0a8f43b913b143a47e40c53f052ffa12fa807",
+      "motivo": "JPEG sem EOI no final, normalizado previamente com a mesma rotina do YOLOv5; orientação EXIF aplicada e JPEG qualidade 100, subsampling 0."
+    },
+    {
+      "arquivo": "20261011_220827.jpg",
+      "conjunto": "train",
+      "sha256_recebido": "0f46cc6874a11eba046e3a7c9b71eca0dd8e9721e591e6c59673578cb54e7248",
+      "sha256_normalizado": "6a3d1622a700e2a293f8a8c04856103bae80b68758aee92b51432ef84722f4dd",
+      "motivo": "JPEG sem EOI no final, normalizado previamente com a mesma rotina do YOLOv5; orientação EXIF aplicada e JPEG qualidade 100, subsampling 0."
+    },
+    {
+      "arquivo": "20261011_220840.jpg",
+      "conjunto": "train",
+      "sha256_recebido": "aec8db6df9c863399976fa21eafa8b45931bf3d99e7f7518d5f3ce424292545c",
+      "sha256_normalizado": "c4f8c854bfa1f3c1543390b94e95a41a938f9b5804015971ea5339699ad0be69",
+      "motivo": "JPEG sem EOI no final, normalizado previamente com a mesma rotina do YOLOv5; orientação EXIF aplicada e JPEG qualidade 100, subsampling 0."
+    },
+    {
+      "arquivo": "20261011_220846.jpg",
+      "conjunto": "train",
+      "sha256_recebido": "5beca9bd449c08d241e6fb3776f70398d77948c83add44df8ac440c80793713e",
+      "sha256_normalizado": "30f358b79987c395795a78dfbd89de6f3f2039039ef34d9ed960ea86af2b0f5e",
+      "motivo": "JPEG sem EOI no final, normalizado previamente com a mesma rotina do YOLOv5; orientação EXIF aplicada e JPEG qualidade 100, subsampling 0."
+    },
+    {
+      "arquivo": "20261011_220902.jpg",
+      "conjunto": "train",
+      "sha256_recebido": "5531be877e29d37d57e1c1e8a356be084e20d720c840f7c38c62c34dad187c30",
+      "sha256_normalizado": "351185f4ffebd4be8155113bfa271f5c3022c7a564a24b47db7e48be78032374",
+      "motivo": "JPEG sem EOI no final, normalizado previamente com a mesma rotina do YOLOv5; orientação EXIF aplicada e JPEG qualidade 100, subsampling 0."
+    },
+    {
+      "arquivo": "20261011_221037.jpg",
+      "conjunto": "train",
+      "sha256_recebido": "507e00edf96919115446a7100b6851fc126e0816582785a9b3053fe40561f376",
+      "sha256_normalizado": "1a6f7965f98ca096c9bdf7e0b8f1aeabdd31e92fc64cdc423a8698c1c4734023",
+      "motivo": "JPEG sem EOI no final, normalizado previamente com a mesma rotina do YOLOv5; orientação EXIF aplicada e JPEG qualidade 100, subsampling 0."
+    },
+    {
+      "arquivo": "20261011_220930.jpg",
+      "conjunto": "val",
+      "sha256_recebido": "e949110463a51629ac2d95d34ae36f156ef90343c3b6c23012394ae2d6442f21",
+      "sha256_normalizado": "2cd102a2ad918d3aaff35f7ec4f5a857b38eb4ce48909b619b781422c1ebba27",
+      "motivo": "JPEG sem EOI no final, normalizado previamente com a mesma rotina do YOLOv5; orientação EXIF aplicada e JPEG qualidade 100, subsampling 0."
+    },
+    {
+      "arquivo": "20261011_221003.jpg",
+      "conjunto": "val",
+      "sha256_recebido": "81ebf10076e1d58a1d8f3d32b30486696368b9181d6053ff2a794110a959be62",
+      "sha256_normalizado": "1f12fea3be23a007296f3d8fd2187d3723c387f743956c986cad10a1b928ec3c",
+      "motivo": "JPEG sem EOI no final, normalizado previamente com a mesma rotina do YOLOv5; orientação EXIF aplicada e JPEG qualidade 100, subsampling 0."
+    },
+    {
+      "arquivo": "20261011_221029.jpg",
+      "conjunto": "val",
+      "sha256_recebido": "9e73ab47a39aaa1543a7b01c2f165360cd4d44a0b55b2a289862b5f197478d1e",
+      "sha256_normalizado": "82e6478d062a0ef7eeeb5d6e61d31395f27d6fe3e2c9c0fc4df393893d5cf76a",
+      "motivo": "JPEG sem EOI no final, normalizado previamente com a mesma rotina do YOLOv5; orientação EXIF aplicada e JPEG qualidade 100, subsampling 0."
+    }
+  ],
+  "auditoria": {
+    "imagens": 80,
+    "sha256_distintos": 80,
+    "pares_proximos_phash_e_dhash_ate_4": [
+      {
+        "a": "IMG-20261005-WA0051.jpg",
+        "b": "IMG-20261005-WA0054.jpg",
+        "conjunto_a": "train",
+        "conjunto_b": "train",
+        "distancia_phash": 2,
+        "distancia_dhash": 3,
+        "revisao_visual": "WA0051 e WA0054 são tomadas distintas da mesma cena, com deslocamento do enquadramento; ambas pertencem somente ao treino. Mantidas, com similaridade documentada."
+      }
+    ],
+    "regra": "Distâncias de Hamming <=4 em pHash 64 bits e dHash 64 bits; revisão visual das quatro substituições. Não garante independência de cenas semelhantes."
+  },
+  "observacao": "As quatro novas fotos substituem cópias redimensionadas; nomes e conjuntos preservados. Nenhuma marcação antiga foi reaproveitada nas fotos novas. Estas quatro caixas foram anotadas manualmente por coordenadas, e não exportadas do Make Sense IA."
+}

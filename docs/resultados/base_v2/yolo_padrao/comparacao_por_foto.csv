@@ -1,0 +1,9 @@
+arquivo,classe_real,predicao_yolo_padrao,yolo_padrao_acertou,predicao_yolo_customizada,yolo_customizada_acertou,classe_real_cnn,predicao_cnn,cnn_acertou
+20261009_191256.jpg,garrafa_pet,garrafa_pet,True,garrafa_pet,Sim,garrafa_pet,garrafa_pet,True
+20261011_220831.jpg,banana,banana,True,banana,Sim,banana,banana,True
+20261011_221012.jpg,banana,banana,True,banana,Sim,banana,banana,True
+IMG-20261005-WA0006.jpg,banana,banana,True,banana,Sim,banana,banana,True
+IMG-20261005-WA0008.jpg,banana,banana,True,banana,Sim,banana,banana,True
+IMG-20261005-WA0044.jpg,garrafa_pet,sem_deteccao,False,Sem detecção,Não,garrafa_pet,garrafa_pet,True
+IMG-20261005-WA0060.jpg,garrafa_pet,sem_deteccao,False,garrafa_pet,Sim,garrafa_pet,garrafa_pet,True
+IMG-20261005-WA0112.jpg,garrafa_pet,sem_deteccao,False,garrafa_pet,Sim,garrafa_pet,garrafa_pet,True

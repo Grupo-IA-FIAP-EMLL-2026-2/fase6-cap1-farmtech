@@ -1,0 +1,43 @@
+{
+  "ferramenta": "Make Sense IA",
+  "url": "https://www.makesense.ai",
+  "operacao": "Importação das quatro caixas definidas por coordenadas, revisão visual e exportação YOLO no navegador local, com rede bloqueada.",
+  "data": "2026-10-13",
+  "classes": [
+    "banana",
+    "garrafa_pet"
+  ],
+  "manifesto_sha256": "a1e2b05d9dccde76b97a04ceee1f983ca7ad987ab0b795e6171eb281227225ba",
+  "exportacao_sha256": "a7191284a03300894139587f3d26882dcaa4ee14de79fdf239b861c6adaf5774",
+  "observacao": "Make Sense exporta seis casas decimais. O treinamento mantém as oito casas dos rótulos congelados; diferença inferior a 0,001 pixel. A exportação é evidência da revisão e não modifica a base durante o treino.",
+  "arquivos": [
+    {
+      "arquivo": "IMG-20261005-WA0108.txt",
+      "classe_id_exportada": 1,
+      "maior_diferenca_normalizada": 4.999999999588667e-07,
+      "sha256_marcacao_treinada": "da4f373cf41a9bed357502b2ec731c97984c244c2abf139270b7df9bd450b609",
+      "sha256_marcacao_exportada": "8b1bdb0d9edfc1d87be4c9e2cdbcd40de4ec66e145e4792b791fe775ab05623c"
+    },
+    {
+      "arquivo": "IMG-20261005-WA0109.txt",
+      "classe_id_exportada": 1,
+      "maior_diferenca_normalizada": 5.000000000143778e-07,
+      "sha256_marcacao_treinada": "477e32ccbd112e308edf2f960a854601fbf2ae31f242e398c951a5b1d43785aa",
+      "sha256_marcacao_exportada": "36271a3d32228a839b8333abc4232185dc0d4b25dccd99f19941f6e844097478"
+    },
+    {
+      "arquivo": "IMG-20261005-WA0111.txt",
+      "classe_id_exportada": 1,
+      "maior_diferenca_normalizada": 4.999999999588667e-07,
+      "sha256_marcacao_treinada": "5f74fcfcc9c783a911a084c6e13fa8d212df926a8bc22e8e744efe6284d32e6c",
+      "sha256_marcacao_exportada": "e3d46b3beb46b96d9353f5367f03afeb7c0bfa1538c6a9ff2a384a14185c1adc"
+    },
+    {
+      "arquivo": "IMG-20261005-WA0112.txt",
+      "classe_id_exportada": 1,
+      "maior_diferenca_normalizada": 4.999999999588667e-07,
+      "sha256_marcacao_treinada": "6ab2f22f67dd22d156eebd0b3c49c2db79a4088fae1fad08860228a3060fe0fb",
+      "sha256_marcacao_exportada": "34671bb641848463d477582282d65bf805d60f8e0066f87186a549608f3f15ad"
+    }
+  ]
+}

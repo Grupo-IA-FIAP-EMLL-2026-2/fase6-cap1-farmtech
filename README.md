@@ -33,9 +33,9 @@ Nicolly Candida.
 
 O projeto demonstra a um cliente fictício da FarmTech Solutions como reconhecer **bananas e garrafas PET em fotografias**. O objetivo é comparar uma **YOLO customizada**, uma **YOLO padrão** e uma **CNN treinada do zero**, considerando qualidade das previsões, facilidade de integração, treinamento e inferência.
 
-A base contém **40 fotos de cada classe**, com **32 para treino, 4 para validação e 4 para teste por classe**, totalizando 64/8/8 imagens. As caixas foram marcadas no Make Sense IA, e os arquivos estão no Drive do grupo. A preparação está documentada em [Base de dados](docs/BASE_DE_DADOS.md).
+A **base v2 corrigida** contém 40 fotos de cada classe: 32 para treino, 4 para validação e 4 para teste por classe, totalizando 64/8/8. Quatro fotos repetidas foram substituídas pelas novas fotos enviadas pelo grupo. As novas caixas foram importadas, conferidas e exportadas no Make Sense IA. A [preparação e a revisão da base](docs/BASE_DE_DADOS.md) registram as alterações e as limitações.
 
-O passo a passo, o código executado, os resultados e as conclusões estão nos notebooks vinculados abaixo. Este README apresenta o trabalho e orienta o acesso às contribuições.
+Os três notebooks foram **executados novamente** com esta versão. A base congelada e os modelos estão na [publicação base-v2](https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/releases/tag/base-v2), com arquivos e hashes para reprodução. Os resultados da versão anterior estão identificados no [histórico](docs/historico/README.md).
 
 ## 📁 Estrutura de pastas
 
@@ -44,17 +44,22 @@ fase6-cap1-farmtech/
 ├── assets/logo-fiap.png
 ├── data/
 │   ├── dataset.yaml
-│   └── manifesto.csv
+│   ├── manifesto.csv
+│   ├── correcao_base_v2.json
+│   └── revisao_makesense_base_v2.json
 ├── docs/
 │   ├── BASE_DE_DADOS.md
 │   ├── RESULTADOS_FRENTE1.md
 │   ├── REVISAO_ENTREGA.md
+│   ├── ROTEIRO_VIDEO.md
+│   ├── historico/
 │   ├── figuras/
 │   └── resultados/
 ├── notebooks/
 │   └── LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb
 ├── EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb
 ├── MatheusFontes_rm570457_pbl_fase6.ipynb
+├── scripts/auditar_base.py
 ├── .gitignore
 └── README.md
 ```
@@ -67,7 +72,7 @@ fase6-cap1-farmtech/
 - **`MatheusFontes_rm570457_pbl_fase6.ipynb`**: implementação e avaliação executadas da CNN.
 - **`README.md`**: apresentação, identificação da equipe e links de acesso.
 
-Fotos originais, marcações e pesos da YOLO permanecem no Drive. Os três notebooks, as evidências selecionadas e a comparação estão reunidos neste repositório do grupo.
+A publicação base-v2 contém as 80 fotos corrigidas, 80 marcações, pesos dos dois experimentos e o modelo da CNN. Os notebooks, gráficos, previsões e tabelas atuais estão neste repositório. O Colab monta o Drive pessoal e prepara uma pasta própria para a versão v2.
 
 ## 📎 Links e Observações
 
@@ -75,42 +80,61 @@ Fotos originais, marcações e pesos da YOLO permanecem no Drive. Os três noteb
 
 | Material | Acesso | Situação |
 | --- | --- | --- |
-| Entrega 1 — YOLO customizada | [Notebook executado](https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/notebooks/LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/notebooks/LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb) | Integrada; experimentos de 30 e 60 épocas, teste reservado e resultados preservados |
-| Entrega 2 — CNN do zero | [Notebook executado](MatheusFontes_rm570457_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/MatheusFontes_rm570457_pbl_fase6.ipynb) | Integrada à `main`, com resultados e imagens classificadas |
-| Entrega 2 — YOLO padrão e comparação | [Notebook executado](EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb) | Integrada; inferência reproduzida, caixas e comparação crítica |
-| Dados, marcações e resultados da YOLO | [Google Drive do grupo](https://drive.google.com/drive/folders/1T-mHMYGu8Nj33VuK808TOb8hT5D6Q5OT) | Base comum e arquivos dos experimentos disponíveis |
+| Entrega 1 — YOLO customizada | [Notebook executado](https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/notebooks/LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/notebooks/LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb) | Reexecutada na base v2; 30 e 60 épocas, seleção pela validação e teste reservado |
+| Entrega 2 — CNN do zero | [Notebook executado](MatheusFontes_rm570457_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/MatheusFontes_rm570457_pbl_fase6.ipynb) | Reexecutada do zero na base v2, com resultados e imagens classificadas |
+| Entrega 2 — YOLO padrão e comparação | [Notebook executado](EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb) | Reexecutada na base v2; caixas e comparação dos três modelos |
+| Base v2, marcações e modelos | [Arquivos publicados](https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/releases/tag/base-v2) | Versão corrigida usada nos três novos experimentos |
+| Drive do grupo | [Pasta compartilhada](https://drive.google.com/drive/folders/1T-mHMYGu8Nj33VuK808TOb8hT5D6Q5OT) | Pasta original; a versão corrigida está na publicação base-v2 |
 | Resumo da YOLO para comparação | [Resultados da Frente 1](https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/docs/RESULTADOS_FRENTE1.md) | Métricas, durações, protocolo e caminhos registrados |
 | Revisão dos requisitos | [Revisão da entrega](docs/REVISAO_ENTREGA.md) | Evidências e itens que faltam para concluir o trabalho |
-| Vídeo demonstrativo | Link ainda não publicado | Resultados das três abordagens disponíveis para gravação; YouTube não listado, até cinco minutos |
+| Vídeo demonstrativo | Link ainda não publicado · [Roteiro de gravação](docs/ROTEIRO_VIDEO.md) | Gravar com os resultados da base v2; YouTube não listado, até cinco minutos |
 
 ### 🧠 Decisões Técnicas
 
 - **Base comum:** preservar as mesmas imagens de treino, validação e teste nas três abordagens. Uma foto pode conter vários objetos da mesma classe.
 - **YOLO customizada:** ajustar a YOLOv5s a partir de pesos pré-treinados, comparar 30 e 60 épocas na validação e avaliar o modelo escolhido no teste reservado.
 - **CNN:** treinar uma rede em Keras do zero, classificando a foto inteira. YOLO também localiza os objetos por meio das caixas.
-- **Avaliação:** apresentar métricas de detecção e acerto por foto separadamente. Na comparação de tempos, informar hardware, tamanho da entrada, lote e etapas medidas; a execução registrada da CNN utilizou CPU local, e a YOLO customizada utilizou Tesla T4.
+- **Avaliação:** apresentar métricas de detecção e acerto por foto separadamente. Na comparação de tempos, informar hardware, tamanho da entrada, lote e etapas medidas; as três novas execuções utilizaram a CPU Intel Core 7 150U. O tempo da YOLO inclui etapas diferentes do tempo da CNN, conforme a tabela de condições.
+
+### 📊 Resultados atuais — base v2
+
+A comparação abaixo mede **classe correta por foto**, usando as mesmas oito fotos de teste. Ausência de caixa na YOLO é erro; havendo caixas, escolhe-se a classe da maior confiança a partir de 0,25.
+
+| Abordagem | Acertos no teste | Acerto por foto |
+| --- | ---: | ---: |
+| YOLO customizada — 60 épocas | 7/8 | 87,50% |
+| YOLO padrão COCO | 5/8 | 62,50% |
+| CNN do zero | 8/8 | 100,00% |
+
+A YOLO customizada obteve **mAP@50 de 78,53%** e **mAP@50–95 de 51,95%** no teste. mAP avalia detecções e caixas; não equivale à acurácia da CNN. O teste é pequeno e contém cenas próximas, portanto os resultados não comprovam desempenho geral em novas condições. [Tabelas e comparação por foto](docs/resultados/base_v2/yolo_padrao/comparacao_por_foto.csv).
 
 ### 📢 Observações Gerais
 
-As três abordagens e a comparação estão integradas. A YOLO padrão foi reexecutada de ponta a ponta; os códigos e as saídas da YOLO customizada e da CNN foram preservados, com revisão das explicações. Falta publicar o vídeo e concluir a revisão de submissão descrita em [Revisão da entrega](docs/REVISAO_ENTREGA.md).
+A substituição das fotos, o manifesto, os dois treinamentos da YOLO, a CNN e a comparação foram concluídos e registrados nesta versão. A gravação e publicação do vídeo ficam a cargo do grupo. O [roteiro](docs/ROTEIRO_VIDEO.md) utiliza os resultados atuais.
 
-**Prazo informado pelo grupo: 13/10/2026.** Antes da submissão, revisar execução, nomes dos arquivos, acessos e conteúdo dos links. Após a entrega no portal, manter a versão entregue congelada, conforme a orientação do enunciado.
+**Prazo informado pelo grupo: 13/10/2026.** Antes da submissão, conferir o link do vídeo e os acessos. Após a entrega no portal, manter a versão entregue congelada, conforme o enunciado. A [revisão](docs/REVISAO_ENTREGA.md) distingue o que foi verificado e os itens de submissão.
 
 ## 🔧 Como executar o código
 
-1. Abra o [Drive do grupo](https://drive.google.com/drive/folders/1T-mHMYGu8Nj33VuK808TOb8hT5D6Q5OT) e adicione um atalho da pasta `FIAP_fase6_grupo21` em **Meu Drive**, ou copie a base preservando sua estrutura.
-2. Abra o notebook desejado pelo link **Abrir no Colab** da tabela acima.
-3. Para a YOLO customizada, selecione uma GPU no ambiente do Colab. A CNN pode executar em CPU; registrar o dispositivo é necessário para interpretar os tempos de uma nova execução.
-4. Execute as células na ordem, autorize a montagem do Drive e ajuste o caminho da base se a sua cópia estiver em outro local. O caminho utilizado é `/content/drive/MyDrive/FIAP_fase6_grupo21/dataset_yolo/organizado`.
-5. Confira as saídas e salve o notebook com os resultados. A YOLO customizada grava pesos e resultados no Drive; a YOLO padrão grava previsões e imagens em uma pasta de resultados; a CNN apresenta treinamento, gráficos e avaliação no próprio notebook.
+1. Abra o notebook desejado pelo link **Abrir no Colab** da tabela acima.
+2. Para treinar a YOLO, selecione GPU no Colab. As execuções salvas desta versão foram feitas em CPU; uma nova execução terá outros tempos.
+3. Execute as células em ordem e autorize a montagem do seu Google Drive quando solicitado.
+4. O notebook baixa a base v2 da publicação, confere o SHA-256 e os 80 arquivos, e organiza a pasta `/content/drive/MyDrive/FIAP_fase6_grupo21_base_v2/dataset_yolo/organizado`.
+5. Os resultados são salvos em `/content/drive/MyDrive/FIAP_fase6_grupo21_base_v2/resultados_farmtech_v2`. Salve também o notebook executado.
 
-Para baixar os arquivos deste repositório:
+A pasta pessoal v2 permite reproduzir a versão correta mesmo que a pasta compartilhada contenha a versão antiga. Para apenas consultar os resultados, use os notebooks já executados; não é necessário treinar novamente para gravar o vídeo.
 
 ```bash
 git clone https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech.git
 ```
 
-Na execução local da CNN, utilizar Jupyter e as bibliotecas TensorFlow, NumPy, Matplotlib, scikit-learn e PyYAML, com a base baixada e `YOLO_DIR` ajustado. A execução registrada da CNN utiliza Python 3.13.5; a versão completa das dependências não foi congelada. Os notebooks YOLO registram o commit do código utilizado. A reprodução da YOLO padrão também registra [ambiente e versões](docs/resultados/yolo_padrao/ambiente_execucao.json).
+Na execução local, os notebooks aceitam `FARMTECH_DATASET_ROOT` apontando para a base v2 extraída e `FARMTECH_OUTPUT_ROOT` para o destino dos resultados. Utilizar Jupyter com TensorFlow/Keras, PyTorch/torchvision, NumPy, pandas, Matplotlib, scikit-learn, PyYAML, Pillow e os requisitos oficiais da YOLOv5. Python **3.12.3**, PyTorch **2.14.1+cpu**, TensorFlow **2.21.0** e Keras **3.15.1** foram registrados nesta execução. As [versões completas](docs/resultados/base_v2/pip_freeze_execucao.txt) e os ambientes dos modelos foram preservados. O código YOLO está fixado no commit `f9578796b8a64889aa9e66dc06914d19f40d338e`.
+
+Para conferir uma cópia extraída:
+
+```bash
+python scripts/auditar_base.py /caminho/para/organizado
+```
 
 ## 📋 Licença
 

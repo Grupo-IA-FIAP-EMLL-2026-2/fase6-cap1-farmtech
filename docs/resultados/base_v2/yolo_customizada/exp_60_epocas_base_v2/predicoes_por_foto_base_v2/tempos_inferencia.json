@@ -1,0 +1,11 @@
+{
+  "preparacao_medida_ms_por_foto": 0.7,
+  "inferencia_modelo_ms_por_foto": 169.7,
+  "filtragem_caixas_ms_por_foto": 1.1,
+  "fotos_avaliadas": 8,
+  "hardware": "Intel(R) Core(TM) 7 150U",
+  "dispositivo": "cpu",
+  "batch_size": 1,
+  "imgsz": 640,
+  "base_versao": "base_v2_sem_duplicatas"
+}

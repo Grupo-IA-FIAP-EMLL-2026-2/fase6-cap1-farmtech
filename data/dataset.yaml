@@ -1,6 +1,5 @@
-# Caminho da base organizada no Google Drive, quando montado no Colab.
-# Ajuste path se a pasta compartilhada tiver sido copiada para outro local.
-path: /content/drive/MyDrive/FIAP_fase6_grupo21/dataset_yolo/organizado
+# Base v2 preparada automaticamente pelos notebooks no Colab.
+path: /content/drive/MyDrive/FIAP_fase6_grupo21_base_v2/dataset_yolo/organizado
 train: images/train
 val: images/val
 test: images/test

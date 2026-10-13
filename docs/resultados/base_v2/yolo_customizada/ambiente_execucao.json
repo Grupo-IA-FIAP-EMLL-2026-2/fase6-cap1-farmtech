@@ -1,0 +1,17 @@
+{
+  "base_versao": "base_v2_sem_duplicatas",
+  "sha256_manifesto": "a1e2b05d9dccde76b97a04ceee1f983ca7ad987ab0b795e6171eb281227225ba",
+  "python": "3.12.3",
+  "pytorch": "2.14.1+cpu",
+  "hardware": "Intel(R) Core(TM) 7 150U",
+  "dispositivo": "cpu",
+  "threads_cpu": 4,
+  "yolo_commit": "f9578796b8a64889aa9e66dc06914d19f40d338e",
+  "imgsz": 640,
+  "batch_train": 8,
+  "seed": 42,
+  "workers": 2,
+  "cache": "ram",
+  "patience": 0,
+  "pesos_iniciais_sha256": "8b3b748c1e592ddd8868022e8732fde20025197328490623cc16c6f24d0782ee"
+}
