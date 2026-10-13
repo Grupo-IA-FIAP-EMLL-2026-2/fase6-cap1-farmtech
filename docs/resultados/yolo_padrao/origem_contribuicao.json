@@ -2,7 +2,7 @@
   "autor": "Elton Modesto de Souza Dias",
   "rm": "572530",
   "notebook_original": "https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase5-cap1-farmtech/blob/6efd71a421b35a11f841f6ea81b9cea892c8a89b/EltonDias_rm572530_pbl_fase6.ipynb",
-  "sha256_notebook_original": "66e07998385c215eaf633a954b838502a2e057e0d0ab93da2a19d0a4c18acb78",
+  "sha256_notebook_original": "32f0a83aea5c8d955f812f936daa88837d6f42559db69df26245dc39cac1ac41",
   "resultado_original": {
     "modelo": "YOLOv5s padrão pré-treinada no COCO",
     "regra_avaliacao": "acerto por imagem; bottle do COCO aproxima garrafa_pet",
@@ -45,5 +45,8 @@
     }
   },
   "sha256_pesos_coco": "8b3b748c1e592ddd8868022e8732fde20025197328490623cc16c6f24d0782ee",
-  "limite_temporal": "Tempos originais e da reprodução medidos em ambientes diferentes; não foram substituídos nem misturados."
+  "limite_temporal": "Tempos originais e da reprodução medidos em ambientes diferentes; não foram substituídos nem misturados.",
+  "sha256_copia_utilizada_na_revisao": "66e07998385c215eaf633a954b838502a2e057e0d0ab93da2a19d0a4c18acb78",
+  "git_blob_notebook_original": "88762b0a7bafeefb1a9aee561219b1d87557b4e6",
+  "observacao_hash": "Hash do original conferido nos bytes decodificados da API Contents do GitHub, no commit citado. O hash da cópia utilizada na revisão foi preservado separadamente."
 }
