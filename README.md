@@ -27,7 +27,7 @@ Nicolly Candida.
 
 ### Coordenador(a)
 
-[André Godoi Chiovato](https://www.linkedin.com/in/andregodoichiovato/), conforme a identificação apresentada no template da FIAP.
+[André Godoi Chiovato](https://www.linkedin.com/in/andregodoichiovato/).
 
 ## 📜 Descrição
 
