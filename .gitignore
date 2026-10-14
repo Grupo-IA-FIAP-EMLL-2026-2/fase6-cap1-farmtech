@@ -32,3 +32,4 @@ runs/
 !docs/resultados/base_v2/**/train_batch*.jpg
 !docs/resultados/base_v2/**/labels.jpg
 !docs/resultados/base_v2/**/labels_correlogram.jpg
+roteiro_video_cnn.md

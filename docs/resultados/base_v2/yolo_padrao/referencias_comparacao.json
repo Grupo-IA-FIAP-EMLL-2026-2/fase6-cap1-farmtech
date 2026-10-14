@@ -88,7 +88,7 @@
       "sha256_manifesto": "a1e2b05d9dccde76b97a04ceee1f983ca7ad987ab0b795e6171eb281227225ba"
     },
     "modelo_sha256": "d26e95acaa94e226eceaf26b10d3519f20e6b64bd24f6cccd92945a6318065d6",
-    "notebook": "MatheusFontes_rm570457_pbl_fase6.ipynb",
+    "notebook": "notebooks/MatheusFontes_rm570457_pbl_fase6.ipynb",
     "fonte_predicoes": "docs/resultados/base_v2/cnn/predicoes_cnn.csv"
   },
   "historico_v1": "https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/tree/1d0550e039eaac65c5c614f8cde5650420b7f09f"

@@ -56,9 +56,9 @@ fase6-cap1-farmtech/
 │   ├── figuras/
 │   └── resultados/
 ├── notebooks/
-│   └── LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb
-├── EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb
-├── MatheusFontes_rm570457_pbl_fase6.ipynb
+│   ├── LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb
+│   ├── EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb
+│   └── MatheusFontes_rm570457_pbl_fase6.ipynb
 ├── scripts/auditar_base.py
 ├── .gitignore
 └── README.md
@@ -67,9 +67,10 @@ fase6-cap1-farmtech/
 - **`assets/`**: imagem institucional utilizada neste README.
 - **`data/`**: configuração e manifesto da base, sem fotos originais.
 - **`docs/`**: documentação, resultados e imagens processadas.
-- **`notebooks/`**: implementação executada da YOLO customizada.
-- **`EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb`**: YOLO padrão e comparação das três abordagens.
-- **`MatheusFontes_rm570457_pbl_fase6.ipynb`**: implementação e avaliação executadas da CNN.
+- **`notebooks/`**: os três notebooks executados.
+  - **`LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb`**: YOLO customizada.
+  - **`EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb`**: YOLO padrão e comparação das três abordagens.
+  - **`MatheusFontes_rm570457_pbl_fase6.ipynb`**: implementação e avaliação executadas da CNN.
 - **`README.md`**: apresentação, identificação da equipe e links de acesso.
 
 A publicação base-v2 contém as 80 fotos corrigidas, 80 marcações, pesos dos dois experimentos e o modelo da CNN. Os notebooks, gráficos, previsões e tabelas atuais estão neste repositório. O Colab monta o Drive pessoal e prepara uma pasta própria para a versão v2.
@@ -81,13 +82,13 @@ A publicação base-v2 contém as 80 fotos corrigidas, 80 marcações, pesos dos
 | Material | Acesso | Situação |
 | --- | --- | --- |
 | Entrega 1 — YOLO customizada | [Notebook executado](https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/notebooks/LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/notebooks/LucasCarvalhoCordeiro_rm570388_pbl_fase6.ipynb) | Reexecutada na base v2; 30 e 60 épocas, seleção pela validação e teste reservado |
-| Entrega 2 — CNN do zero | [Notebook executado](MatheusFontes_rm570457_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/MatheusFontes_rm570457_pbl_fase6.ipynb) | Reexecutada do zero na base v2, com resultados e imagens classificadas |
-| Entrega 2 — YOLO padrão e comparação | [Notebook executado](EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb) | Reexecutada na base v2; caixas e comparação dos três modelos |
+| Entrega 2 — CNN do zero | [Notebook executado](notebooks/MatheusFontes_rm570457_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/notebooks/MatheusFontes_rm570457_pbl_fase6.ipynb) | Reexecutada do zero na base v2, com resultados e imagens classificadas |
+| Entrega 2 — YOLO padrão e comparação | [Notebook executado](notebooks/EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb) · [Abrir no Colab](https://colab.research.google.com/github/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/notebooks/EltonModestoDeSouzaDias_rm572530_pbl_fase6.ipynb) | Reexecutada na base v2; caixas e comparação dos três modelos |
 | Base v2, marcações e modelos | [Arquivos publicados](https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/releases/tag/base-v2) | Versão corrigida usada nos três novos experimentos |
 | Drive do grupo | [Pasta compartilhada](https://drive.google.com/drive/folders/1T-mHMYGu8Nj33VuK808TOb8hT5D6Q5OT) | Pasta original; a versão corrigida está na publicação base-v2 |
 | Resumo da YOLO para comparação | [Resultados da Frente 1](https://github.com/Grupo-IA-FIAP-EMLL-2026-2/fase6-cap1-farmtech/blob/main/docs/RESULTADOS_FRENTE1.md) | Métricas, durações, protocolo e caminhos registrados |
 | Revisão dos requisitos | [Revisão da entrega](docs/REVISAO_ENTREGA.md) | Evidências e itens que faltam para concluir o trabalho |
-| Vídeo demonstrativo | Link ainda não publicado · [Roteiro de gravação](docs/ROTEIRO_VIDEO.md) | Gravar com os resultados da base v2; YouTube não listado, até cinco minutos |
+| Vídeo demonstrativo | [Assistir no YouTube](https://youtu.be/I0geOrUtgvo) · [Roteiro de gravação](docs/ROTEIRO_VIDEO.md) | Gravado com os resultados da base v2; YouTube não listado, até cinco minutos |
 
 ### 🧠 Decisões Técnicas
 
@@ -110,9 +111,9 @@ A YOLO customizada obteve **mAP@50 de 78,53%** e **mAP@50–95 de 51,95%** no te
 
 ### 📢 Observações Gerais
 
-A substituição das fotos, o manifesto, os dois treinamentos da YOLO, a CNN e a comparação foram concluídos e registrados nesta versão. A gravação e publicação do vídeo ficam a cargo do grupo. O [roteiro](docs/ROTEIRO_VIDEO.md) utiliza os resultados atuais.
+A substituição das fotos, o manifesto, os dois treinamentos da YOLO, a CNN e a comparação foram concluídos e registrados nesta versão. O [vídeo demonstrativo](https://youtu.be/I0geOrUtgvo) foi publicado no YouTube como não listado. O [roteiro](docs/ROTEIRO_VIDEO.md) utiliza os resultados atuais.
 
-**Prazo informado pelo grupo: 13/10/2026.** Antes da submissão, conferir o link do vídeo e os acessos. Após a entrega no portal, manter a versão entregue congelada, conforme o enunciado. A [revisão](docs/REVISAO_ENTREGA.md) distingue o que foi verificado e os itens de submissão.
+**Prazo informado pelo grupo: 13/10/2026.** Após a entrega no portal, manter a versão entregue congelada, conforme o enunciado. A [revisão](docs/REVISAO_ENTREGA.md) distingue o que foi verificado e os itens de submissão.
 
 ## 🔧 Como executar o código
 
